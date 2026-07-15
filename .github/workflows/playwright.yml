@@ -1,9 +1,7 @@
-name: GA4 Playwright Test
+name: Playwright GA4 Test
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "0 */6 * * *"
 
 jobs:
   test:
@@ -16,7 +14,7 @@ jobs:
         with:
           node-version: 20
 
-      - run: npm ci
+      - run: npm install
 
       - run: npx playwright install --with-deps
 
