@@ -1,2 +1,0 @@
-# payright
-testing only

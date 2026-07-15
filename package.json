@@ -1,0 +1,8 @@
+{
+  "name": "ga4-report",
+  "version": "1.0.0",
+  "dependencies": {
+    "@google-analytics/data": "^4.9.0",
+    "google-auth-library": "^9.15.0"
+  }
+}
