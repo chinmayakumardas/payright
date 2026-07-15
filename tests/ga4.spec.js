@@ -1,8 +1,8 @@
-
-
 const { test, expect } = require('@playwright/test');
 
 test('GA4 request is sent', async ({ page }) => {
+  test.setTimeout(24 * 60 * 60 * 1000 + 10000); // 24 hours + 10 seconds
+
   let gaRequestFound = false;
 
   page.on('request', request => {
@@ -19,7 +19,8 @@ test('GA4 request is sent', async ({ page }) => {
 
   await page.goto('https://testpilots.vercel.app');
 
-  await page.waitForTimeout(5000);
+  // Keep the browser open for 24 hours
+  await page.waitForTimeout(24 * 60 * 60 * 1000);
 
   expect(gaRequestFound).toBeTruthy();
 });
